@@ -16,7 +16,9 @@ npm install axios-cachels
 | [] | 过滤请求 | [] |
 
 
-## 使用(参照axios)
+## 使用
+
+> 参照axios,返回promise
 
 ```
 axiosAache(config,[])
