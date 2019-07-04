@@ -1,7 +1,7 @@
 # axios-cachels
 axios 请求缓存（避免多次重复请求）
 
-# 使用
+## 安装
 
 
 ```
@@ -17,7 +17,7 @@ npm install axios-cachels
 
 > return promise
 
-# 使用
+## 使用
 
 ```
 axiosAache(config,[])
