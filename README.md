@@ -15,9 +15,11 @@ npm install axios-cachels
 | config | 参照axios | {} |
 | [] | 过滤请求 | [] |
 
+> return promise
 
+# 使用
 
 ```
-let a = axiosAache(config,[])
+axiosAache(config,[])
 
 ```
