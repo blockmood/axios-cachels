@@ -21,6 +21,10 @@ npm install axios-cachels
 > 参照axios,返回promise
 
 ```
-axiosAache(config,[])
+import axiosCache from 'axios-cachels'
+
+
+...
+await axiosCache(config,[])
 
 ```
