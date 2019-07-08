@@ -1,41 +1,49 @@
 import React from 'react';
 import { render} from 'react-dom';
-import axiosAache from '../../src/index.js'
+import axiosCache from '../../src/index.js'
 
 class App extends React.Component{
 
-	componentDidMount(){
-		let a = axiosAache({
-			url:'http://hn.algolia.com/api/v1/search',
-			type:'GET'
-		},[])
-
-		console.log(a)
-
-		let b = axiosAache({
-			url:'http://hn.algolia.com/api/v1/search?query=yuex',
-			type:'GET'
-		},[])
-
-		console.log(b)
+	constructor(){
+		super(...arguments)
+		this.state = {
+			list:[],
+		}
 	}
 
-	handleClick () {
-		axiosAache({
-			url:'http://hn.algolia.com/api/v1/search',
-			type:'GET'
-		},['']).then(res => {
-			console.log(res)
-		})
+	componentDidMount(){
+		this.getData()
+	}
 
-		// console.log(a)
+	updateHandle(e){
+		this.getData(e.target.value)
+	}
+
+	getData(params = ''){
+		axiosCache({
+			url:`http://hn.algolia.com/api/v1/search?query=${params}`,
+			type:'GET'
+		}).then(res => {
+			this.setState({
+				list:res.hits
+			})
+		})
 	}
 
 	render(){
 		return (
 			<React.Fragment>
-				<h1>test</h1>
-				<button onClick={this.handleClick.bind(this)}>click</button>
+				<h1>axiosCache Example</h1>
+				<div>
+					<input  onChange={this.updateHandle.bind(this)}/>
+					<ul>
+						{
+							this.state.list.length > 0 ? this.state.list.map(item => {
+								return <li key={item.objectID}>{item.title}</li>
+							}) : 'loading ...'
+						}
+					</ul>
+				</div>
 			</React.Fragment>
 		)
 	}

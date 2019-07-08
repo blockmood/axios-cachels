@@ -25,6 +25,9 @@ import axiosCache from 'axios-cachels'
 
 
 ...
+
+axiosCache.interceptors.request.use(....)
+
 await axiosCache(config,[])
 
 ```

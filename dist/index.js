@@ -15,7 +15,7 @@ var _axios = _interopRequireDefault(require("axios"));
 
 var cacheList = {};
 
-var _default =
+var request =
 /*#__PURE__*/
 function () {
   var _ref = (0, _asyncToGenerator2["default"])(
@@ -93,9 +93,11 @@ function () {
     }, _callee);
   }));
 
-  return function (_x) {
+  return function request(_x) {
     return _ref.apply(this, arguments);
   };
 }();
 
+request.interceptors = _axios["default"].interceptors;
+var _default = request;
 exports["default"] = _default;

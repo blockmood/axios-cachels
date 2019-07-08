@@ -1,10 +1,9 @@
 import axios from 'axios'
 
-
 let cacheList = {}
 
-export default async (config,filterURL = []) => {
-	
+const request =  async (config,filterURL = []) => {
+
 	let response;
 
 	if(!Array.isArray(filterURL)){
@@ -31,4 +30,6 @@ export default async (config,filterURL = []) => {
 	return response
 }
 
+request.interceptors = axios.interceptors
 
+export default request
