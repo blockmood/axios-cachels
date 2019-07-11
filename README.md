@@ -13,7 +13,7 @@ npm install axios-cachels
 | 参数 | 说明 | 默认值 |
 | ------ | ------ | ------ |
 | config | 参照axios | {} |
-| [] | 过滤列表 | [] |
+| filterList | 过滤列表 | [] |
 
 
 ## 使用
